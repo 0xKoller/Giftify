@@ -10,7 +10,7 @@ function Categories() {
 
   const options = {
     method: "GET",
-    url: "https://giftify-keovdbqpi-joseluiskoller.vercel.app/categories",
+    url: "https://giftify-zeta.vercel.app/categories",
   };
 
   useEffect(() => {
