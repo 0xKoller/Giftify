@@ -12,7 +12,7 @@ function Products() {
   const [loadProducts, setLoadProducts] = useState([]);
   const [products, setProducts] = useState([]);
   const { categorie_id } = useParams();
-  const [offset, setOffset] = useState(0);
+  const [offset, setOffset] = useState(LIMIT);
 
   let options = {
     method: "GET",
