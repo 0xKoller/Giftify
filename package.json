@@ -1,6 +1,11 @@
 {
   "name": "giftify",
   "version": "0.1.0",
+  "author": {
+    "name": "Jose Luis Koller",
+    "email": "joseluiskoller98@gmail.com",
+    "url": "https://0xkoller.github.io/webPage/"
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
