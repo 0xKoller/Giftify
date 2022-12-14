@@ -24,6 +24,7 @@
   padding: 2vh 5vw;
   border-radius: 2vh;
   transition: background-color 250ms;
+  cursor: pointer;
 }
 
 .btn:hover {
