@@ -1,0 +1,10 @@
+.badge {
+  width: fit-content;
+  padding: 5px;
+  border-radius: 1vh;
+  transition: opacity 100ms;
+}
+
+.badge:hover {
+  opacity: 0.7;
+}

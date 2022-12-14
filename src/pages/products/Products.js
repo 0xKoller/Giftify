@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import Badge from "../../utils/Badge/Badge";
+
 import "./Products.css";
 
 function Products() {
-  const LIMIT = 12;
+  const LIMIT = 9;
   const [isLoading, setIsLoading] = useState(true);
   const [loadProducts, setLoadProducts] = useState([]);
   const [products, setProducts] = useState([]);
@@ -67,13 +69,17 @@ function Products() {
                 <div className="product-info">
                   <h5 className="product-title">{product.title}</h5>
                   <p className="product-price">Precio: ${product.price}</p>
-                  <p className="product-seller">
-                    Reputacion Vendedor:{" "}
-                    {product.seller.seller_reputation.power_seller_status}
-                  </p>
-                  <p className="product-location">
+                  <div className="product-seller">
+                    <p>Rep. Vendedor:</p>
+                    <Badge
+                      reputation={
+                        product.seller.seller_reputation.power_seller_status
+                      }
+                    />
+                  </div>
+                  {/* <p className="product-location">
                     Ubicacion: {product.address.state_name}
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </a>
