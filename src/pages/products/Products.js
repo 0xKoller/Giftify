@@ -12,12 +12,14 @@ function Products() {
   const [loadProducts, setLoadProducts] = useState([]);
   const [products, setProducts] = useState([]);
   const { categorie_id } = useParams();
-  const [offset, setOffset] = useState(LIMIT);
+  const [offset, setOffset] = useState(0);
 
   let options = {
     method: "GET",
-    url: "http://localhost:8000/products",
-    params: { categorie_id: categorie_id, limit: LIMIT, offset: 0 },
+    url: `https://api.mercadolibre.com/sites/MLA/search?category=${categorie_id}&limit=${LIMIT}&offset=${offset}`,
+    headers: {
+      Authorization: process.env.API_KEY,
+    },
   };
 
   const phrases = [
@@ -41,9 +43,9 @@ function Products() {
 
   const refreshItems = () => {
     setOffset((state) => state + LIMIT);
-    let options = {
+    options = {
       method: "GET",
-      url: "https://giftify-zeta.vercel.app/products",
+      url: `https://api.mercadolibre.com/sites/MLA/search?category=${categorie_id}&limit=${LIMIT}&offset=${offset}`,
       params: { categorie_id: categorie_id, limit: LIMIT, offset: offset },
     };
     axios.request(options).then((e) => {
