@@ -46,6 +46,7 @@ function Products() {
   }, [loadProducts]);
 
   const refreshItems = () => {
+    setOffset((state) => state + LIMIT);
     options = {
       method: "GET",
       url: `https://api.mercadolibre.com/sites/MLA/search?category=${categorie_id}&limit=${LIMIT}&offset=${offset}`,
