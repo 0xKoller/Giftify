@@ -15,6 +15,7 @@ function App() {
           <Route path="/:categorie_id/products" element={<Products />} />
           <Route path="*" />
         </Routes>
+        <hr />
         <Footer />
       </main>
     </>

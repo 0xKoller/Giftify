@@ -4,9 +4,18 @@
   align-items: center;
 }
 
+h2 {
+  font-size: 1.3rem;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
+
+  text-align: center;
+}
+
 .categories-card-container {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .categories a {
@@ -32,4 +41,15 @@
 .categorie-card p {
   padding: 1vw;
   background-color: transparent;
+}
+
+@media screen and (max-width: 999px) {
+  .categorie-card {
+    width: 100px;
+    height: 70px;
+    padding: 5px;
+  }
+  .categorie-card p {
+    font-size: 0.8rem;
+  }
 }

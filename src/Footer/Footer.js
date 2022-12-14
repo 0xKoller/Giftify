@@ -7,13 +7,6 @@ function Footer() {
         <p>Made with passion 😁</p>
       </div>
       <div className="social">
-        <a href="https://cafecito.app/0xkoller" rel="noopener" target="_blank">
-          <img
-            srcSet="https://cdn.cafecito.app/imgs/buttons/button_5.png 1x, https://cdn.cafecito.app/imgs/buttons/button_5_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_5_3.75x.png 3.75x"
-            src="https://cdn.cafecito.app/imgs/buttons/button_5.png"
-            alt="Invitame un café en cafecito.app"
-          />
-        </a>
         <a className="links" href="https://twitter.com/0xKoller">
           <svg
             className="social-icons"
@@ -46,7 +39,17 @@ function Footer() {
           </svg>
           Reportar problemas
         </a>
+        <a href="https://cafecito.app/0xkoller" rel="noopener" target="_blank">
+          <img
+            srcset="https://cdn.cafecito.app/imgs/buttons/button_1.png 1x, https://cdn.cafecito.app/imgs/buttons/button_1_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_1_3.75x.png 3.75x"
+            src="https://cdn.cafecito.app/imgs/buttons/button_1.png"
+            alt="Invitame un café en cafecito.app"
+          />
+        </a>
       </div>
+      <p>
+        <strong>Author:</strong> Koller, Jose Luis
+      </p>
     </footer>
   );
 }

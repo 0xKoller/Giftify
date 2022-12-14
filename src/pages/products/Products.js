@@ -7,7 +7,7 @@ import axios from "axios";
 import "./Products.css";
 
 function Products() {
-  const LIMIT = 9;
+  const LIMIT = 12;
   const [isLoading, setIsLoading] = useState(true);
   const [loadProducts, setLoadProducts] = useState([]);
   const [products, setProducts] = useState([]);
@@ -25,7 +25,9 @@ function Products() {
   const phrases = [
     "No me sirve nada 😣",
     "No creo que le guste 🤔",
-    "Mostrame otras alternativas",
+    "Muéstrame otras alternativas ☺",
+    "¿A ver otros productos? 😮",
+    "Quiero algo distinto 😁",
   ];
 
   useEffect(() => {
@@ -61,7 +63,7 @@ function Products() {
     return (
       <div className="products">
         <Link className="btn" to={"/categories"}>
-          {"<"} Volver a categorias
+          Volver a categorias
         </Link>
         <div className="products-container">
           {products.map((product) => (
@@ -70,9 +72,13 @@ function Products() {
                 <img src={product.thumbnail} className="product-img" />
                 <div className="product-info">
                   <h5 className="product-title">{product.title}</h5>
-                  <p className="product-price">Precio: ${product.price}</p>
+                  <p className="product-price">
+                    <strong>Precio:</strong> ${product.price}
+                  </p>
                   <div className="product-seller">
-                    <p>Rep. Vendedor:</p>
+                    <p>
+                      <strong>Rep. Vendedor:</strong>
+                    </p>
                     <Badge
                       reputation={
                         product.seller.seller_reputation.power_seller_status

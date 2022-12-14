@@ -20,8 +20,10 @@ footer {
   align-items: center;
   justify-content: center;
   color: black;
+  margin: 0 2vw;
   transition: opacity 300ms;
   transition: background-color 300ms;
+  padding: 5px 10px;
 }
 
 .links:hover {
@@ -32,4 +34,17 @@ footer {
 
 .social-icons {
   height: 30px;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 999px) {
+  .personal {
+    margin-bottom: 2vh;
+  }
+  .social {
+    flex-direction: column;
+  }
+  .links {
+    margin: 1vh;
+  }
 }

@@ -3,6 +3,7 @@
   padding: 5px;
   border-radius: 1vh;
   transition: opacity 100ms;
+  margin-left: 5px;
 }
 
 .badge:hover {

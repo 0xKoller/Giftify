@@ -2,27 +2,31 @@
 * {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  font-weight: bold;
   margin: 0;
-  padding: 0 0.5vw;
+  padding: 0;
   text-decoration: none;
 }
 
 body {
+  background-color: #fff159;
+}
+
+main {
   display: grid;
   grid-template-rows: 1fr auto;
-  align-items: center;
-  /* display:flex;
-  justify-content: center;
-  flex-direction: column;
-  align-content: center; */
-  overflow-x: hidden;
-  min-height: 100vh;
 
-  background-color: #fff159;
+  align-items: center;
+  overflow-x: hidden;
+
+  min-height: 95vh;
 }
 
 h1 {
   color: #242d7a;
   font-size: 5em;
+}
+@media screen and (max-width: 999px) {
+  * {
+    padding: 0;
+  }
 }
