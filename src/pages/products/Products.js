@@ -43,7 +43,7 @@ function Products() {
     setOffset((state) => state + LIMIT);
     let options = {
       method: "GET",
-      url: "http://localhost:8000/products",
+      url: "https://giftify-keovdbqpi-joseluiskoller.vercel.app/products",
       params: { categorie_id: categorie_id, limit: LIMIT, offset: offset },
     };
     axios.request(options).then((e) => {

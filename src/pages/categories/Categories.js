@@ -10,7 +10,7 @@ function Categories() {
 
   const options = {
     method: "GET",
-    url: "http://localhost:8000/categories",
+    url: "https://giftify-keovdbqpi-joseluiskoller.vercel.app/categories",
   };
 
   useEffect(() => {
