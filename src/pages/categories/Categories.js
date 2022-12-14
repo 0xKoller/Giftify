@@ -19,6 +19,7 @@ function Categories() {
     axios
       .request(options)
       .then((response) => {
+        console.log(response);
         response.json();
       })
       .then((e) => {
