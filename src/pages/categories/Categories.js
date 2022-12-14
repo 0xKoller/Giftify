@@ -10,14 +10,22 @@ function Categories() {
 
   const options = {
     method: "GET",
-    url: "https://giftify-zeta.vercel.app/categories",
+    url: "https://api.mercadolibre.com/sites/MLA/categories",
+    headers: {
+      Authorization: process.env.API_KEY,
+    },
   };
-
   useEffect(() => {
-    axios.request(options).then((e) => {
-      console.log(e);
-      return setLoadCategories(e.data);
-    });
+    axios
+      .request(options)
+      .then((response) => {
+        res.json(response.data);
+      })
+      .then((e) => {
+        console.log(e);
+        return setLoadCategories(e.data);
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
