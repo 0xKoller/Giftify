@@ -26,12 +26,6 @@ footer {
   padding: 5px 10px;
 }
 
-.links:hover {
-  border-radius: 5px;
-  background-color: rgb(247, 247, 247);
-  opacity: 0.8;
-}
-
 .social-icons {
   height: 30px;
   margin-right: 5px;
