@@ -12,7 +12,7 @@ function Products() {
   const [loadProducts, setLoadProducts] = useState([]);
   const [products, setProducts] = useState([]);
   const { categorie_id } = useParams();
-  const [offset, setOffset] = useState(LIMIT);
+  const [offset, setOffset] = useState(0);
 
   let options = {
     method: "GET",
@@ -25,7 +25,7 @@ function Products() {
   const phrases = [
     "No me sirve nada 😣",
     "No creo que le guste 🤔",
-    "Muéstrame otras alternativas ☺",
+    "Muéstrame otras alternativas 😊",
     "¿A ver otros productos? 😮",
     "Quiero algo distinto 😁",
   ];
