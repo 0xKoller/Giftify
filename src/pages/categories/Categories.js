@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "./Categories.css";
 
 function Categories() {
@@ -7,16 +8,15 @@ function Categories() {
   const [loadCategories, setLoadCategories] = useState([]);
   const [categories, setCategories] = useState([]);
 
-  const baseURL = "https://api.mercadolibre.com/sites/MLA/categories";
+  const options = {
+    method: "GET",
+    url: "http://localhost:8000/categories",
+  };
 
   useEffect(() => {
-    fetch(baseURL, {
-      headers: { Authorization: "Bearer sII51rFEw09inj4VZdyDyqMF1Uf6n1Ii" },
-    })
-      .then((e) => e.json())
-      .then((c) => {
-        return setLoadCategories(c);
-      });
+    axios.request(options).then((e) => {
+      return setLoadCategories(e.data);
+    });
   }, []);
 
   useEffect(() => {

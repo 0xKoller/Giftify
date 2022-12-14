@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import Badge from "../../utils/Badge/Badge";
+import axios from "axios";
 
 import "./Products.css";
 
@@ -10,9 +11,14 @@ function Products() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadProducts, setLoadProducts] = useState([]);
   const [products, setProducts] = useState([]);
-  const { categoryID } = useParams();
+  const { categorie_id } = useParams();
   const [offset, setOffset] = useState(LIMIT);
-  const baseURL = `https://api.mercadolibre.com/sites/MLA/search?category=${categoryID}&limit=${LIMIT}`;
+
+  let options = {
+    method: "GET",
+    url: "http://localhost:8000/products",
+    params: { categorie_id: categorie_id, limit: LIMIT, offset: 0 },
+  };
 
   const phrases = [
     "No me sirve nada 😣",
@@ -21,13 +27,9 @@ function Products() {
   ];
 
   useEffect(() => {
-    fetch(baseURL, {
-      headers: { Authorization: "Bearer sII51rFEw09inj4VZdyDyqMF1Uf6n1Ii" },
-    })
-      .then((e) => e.json())
-      .then((c) => {
-        return setLoadProducts(c.results);
-      });
+    axios.request(options).then((e) => {
+      return setLoadProducts(e.data.results);
+    });
   }, []);
 
   useEffect(() => {
@@ -39,15 +41,14 @@ function Products() {
 
   const refreshItems = () => {
     setOffset((state) => state + LIMIT);
-    setIsLoading(true);
-    fetch(`${baseURL}&offset=${offset}`, {
-      headers: { Authorization: "Bearer sII51rFEw09inj4VZdyDyqMF1Uf6n1Ii" },
-    })
-      .then((e) => e.json())
-      .then((c) => {
-        return setLoadProducts(c.results);
-      })
-      .finally(setIsLoading(false));
+    let options = {
+      method: "GET",
+      url: "http://localhost:8000/products",
+      params: { categorie_id: categorie_id, limit: LIMIT, offset: offset },
+    };
+    axios.request(options).then((e) => {
+      return setLoadProducts(e.data.results);
+    });
   };
 
   if (isLoading) {
@@ -55,7 +56,6 @@ function Products() {
   }
 
   if (products.length > 0) {
-    console.log(products);
     return (
       <div className="products">
         <Link className="btn" to={"/categories"}>
