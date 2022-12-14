@@ -1,0 +1,30 @@
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing h1 {
+  margin: 2vh;
+}
+
+.landing p {
+  margin: 0 0 4vh 0;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #242d7a;
+  width: 50px;
+  color: white;
+  margin: 2vh;
+  padding: 2vh 5vw;
+  border-radius: 2vh;
+  transition: background-color 250ms;
+}
+
+.btn:hover {
+  background-color: #3240bf;
+}
