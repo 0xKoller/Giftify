@@ -15,6 +15,7 @@ function Categories() {
 
   useEffect(() => {
     axios.request(options).then((e) => {
+      console.log(e);
       return setLoadCategories(e.data);
     });
   }, []);
