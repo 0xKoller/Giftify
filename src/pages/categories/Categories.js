@@ -19,12 +19,7 @@ function Categories() {
     axios
       .request(options)
       .then((response) => {
-        console.log(response);
-        response.json();
-      })
-      .then((e) => {
-        console.log(e);
-        return setLoadCategories(e.data);
+        return setLoadCategories(response.data);
       })
       .catch((err) => console.log(err));
   }, []);
