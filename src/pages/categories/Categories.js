@@ -38,9 +38,12 @@ function Categories() {
     }
   }, [loadCategories]);
 
-  const recordGACategorie = (categorie) => {
+  const recordGACategorie = (category) => {
     ReactGA.event({
-      category: categorie,
+      action: "cat_selection",
+      label: "cat_selection",
+      category: "cat_category",
+      value: category,
     });
   };
 

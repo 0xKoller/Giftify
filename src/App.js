@@ -6,7 +6,7 @@ import Products from "./pages/products/Products";
 import Footer from "./Footer/Footer";
 import ReactGA from "react-ga";
 
-const tracking_id = process.env.TRACKING_ID;
+const tracking_id = "G-Q75541X2M0";
 ReactGA.initialize(tracking_id);
 
 function App() {
