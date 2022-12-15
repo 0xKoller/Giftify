@@ -14,7 +14,6 @@ function App() {
           <Route path="/categories" element={<Categories />} />
           <Route path="/:categorie_id/products" element={<Products />} />
         </Routes>
-        <hr />
         <Footer />
       </main>
     </>
