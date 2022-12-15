@@ -7,8 +7,8 @@ function Categories() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadCategories, setLoadCategories] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [random, setRandom] = useState('');
- 
+  const [random, setRandom] = useState("");
+
   const options = {
     method: "GET",
     url: "https://api.mercadolibre.com/sites/MLA/categories",
@@ -21,14 +21,15 @@ function Categories() {
     axios
       .request(options)
       .then((response) => {
-        console.log(random)
         return setLoadCategories(response.data);
       })
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
-    setRandom(loadCategories[Math.floor(Math.random()*loadCategories.length + 1)])
+    setRandom(
+      loadCategories[Math.floor(Math.random() * loadCategories.length + 1)]
+    );
     if (loadCategories.length > 0) {
       setCategories(loadCategories);
       setIsLoading(false);
@@ -50,10 +51,11 @@ function Categories() {
                 <p>{categorie.name}</p>
               </div>
             </Link>
-            
           ))}
         </div>
-        <Link to={`/${random.id}/products`} className="btn">¿No te podes decidir?</Link>
+        <Link to={`/${random.id}/products`} className="btn">
+          ¿No te podes decidir?
+        </Link>
       </div>
     );
   } else {

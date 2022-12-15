@@ -33,7 +33,6 @@ function Products() {
 
   useEffect(() => {
     axios.request(options).then((e) => {
-      console.log(e.data.paging);
       return setLoadProducts(e.data);
     });
     setOffset((state) => state + LIMIT);
@@ -54,7 +53,7 @@ function Products() {
       params: { categorie_id: categorie_id, limit: LIMIT, offset: offset },
     };
     axios.request(options).then((e) => {
-      return setLoadProducts(e.data.results);
+      return setLoadProducts(e.data);
     });
   };
 
@@ -88,9 +87,6 @@ function Products() {
                       }
                     />
                   </div>
-                  {/* <p className="product-location">
-                    Ubicacion: {product.address.state_name}
-                  </p> */}
                 </div>
               </div>
             </a>

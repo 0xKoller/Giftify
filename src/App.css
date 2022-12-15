@@ -8,9 +8,9 @@
   text-align: center;
 }
 
-
 body {
-  background: linear-gradient(90deg, #FFE600 21px, transparent 1%) center, linear-gradient(#FFE600 21px, transparent 1%) center, #242d7a;
+  background: linear-gradient(90deg, #ffe600 21px, transparent 1%) center,
+    linear-gradient(#ffe600 21px, transparent 1%) center, #242d7a;
   background-size: 22px 22px;
 }
 
@@ -21,7 +21,7 @@ main {
   align-items: center;
   overflow-x: hidden;
 
-  min-height: 95vh;
+  min-height: 100vh;
 }
 
 h1 {
