@@ -4,6 +4,7 @@ import Landing from "./pages/landing/Landing";
 import Footer from "./Footer/Footer";
 import ReactGA from "react-ga";
 import { lazy, Suspense } from "react";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 const Categories = lazy(() => import("./pages/categories/Categories"));
 const Products = lazy(() => import("./pages/products/Products"));
@@ -16,12 +17,14 @@ function App() {
     <>
       <main>
         <Suspense>
-          <Routes>
-            <Route exact path="/" element={<Landing />} />
+          <SkeletonTheme>
+            <Routes>
+              <Route exact path="/" element={<Landing />} />
 
-            <Route path="/categories" element={<Categories />} />
-            <Route path="/:categorie_id/products" element={<Products />} />
-          </Routes>
+              <Route path="/categories" element={<Categories />} />
+              <Route path="/:categorie_id/products" element={<Products />} />
+            </Routes>
+          </SkeletonTheme>
         </Suspense>
         <Footer />
       </main>
