@@ -4,6 +4,10 @@ import Landing from "./pages/landing/Landing";
 import Categories from "./pages/categories/Categories";
 import Products from "./pages/products/Products";
 import Footer from "./Footer/Footer";
+import ReactGA from "react-ga";
+
+const tracking_id = process.env.TRACKING_ID;
+ReactGA.initialize(tracking_id);
 
 function App() {
   return (

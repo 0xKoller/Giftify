@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+import ReactGA from "react-ga";
 import axios from "axios";
 import "./Categories.css";
 
@@ -36,6 +38,12 @@ function Categories() {
     }
   }, [loadCategories]);
 
+  const recordGACategorie = (categorie) => {
+    ReactGA.event({
+      category: categorie,
+    });
+  };
+
   if (isLoading) {
     return <h1>Cargando...</h1>;
   }
@@ -46,7 +54,10 @@ function Categories() {
         <h2>Seleccione una categoria</h2>
         <div className="categories-card-container">
           {categories.map((categorie) => (
-            <Link to={`/${categorie.id}/products`}>
+            <Link
+              to={`/${categorie.id}/products`}
+              onClick={() => recordGACategorie(categorie.name)}
+            >
               <div className="categorie-card">
                 <p>{categorie.name}</p>
               </div>

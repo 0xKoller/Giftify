@@ -1,8 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import ReactGA from "react-ga";
 import "./Landing.css";
 
 function Landing() {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname);
+  }, []);
   return (
     <div className="landing">
       <h1>Giftify</h1>
