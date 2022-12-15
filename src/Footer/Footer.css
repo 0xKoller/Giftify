@@ -46,11 +46,15 @@ footer {
 }
 
 @media screen and (max-width: 999px) {
+  .footer {
+    max-width: 70vw;
+  }
   .personal {
     margin-bottom: 2vh;
   }
   .social {
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .links {
     margin: 1vh;
