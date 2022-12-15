@@ -8,11 +8,12 @@ import "./Products.css";
 
 function Products() {
   const LIMIT = 12;
+  const startingOffset = Math.floor(Math.random() * 1000 + 1);
   const [isLoading, setIsLoading] = useState(true);
   const [loadProducts, setLoadProducts] = useState([]);
   const [products, setProducts] = useState([]);
   const { categorie_id } = useParams();
-  const [offset, setOffset] = useState(0);
+  const [offset, setOffset] = useState(startingOffset);
 
   let options = {
     method: "GET",
@@ -32,15 +33,15 @@ function Products() {
 
   useEffect(() => {
     axios.request(options).then((e) => {
-      return setLoadProducts(e.data.results);
+      console.log(e.data.paging);
+      return setLoadProducts(e.data);
     });
-
     setOffset((state) => state + LIMIT);
   }, []);
 
   useEffect(() => {
-    if (loadProducts.length > 0) {
-      setProducts(loadProducts);
+    if (loadProducts.length != 0) {
+      setProducts(loadProducts.results);
       setIsLoading(false);
     }
   }, [loadProducts]);

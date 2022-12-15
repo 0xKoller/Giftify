@@ -13,7 +13,6 @@ function App() {
           <Route exact path="/" element={<Landing />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/:categorie_id/products" element={<Products />} />
-          <Route path="*" />
         </Routes>
         <Footer />
       </main>
