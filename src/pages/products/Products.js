@@ -68,8 +68,8 @@ function Products() {
           Volver a categorias
         </Link>
         <div className="products-container">
-          {products.map((product) => (
-            <a target="_blank" href={product.permalink}>
+          {products.map((product, i) => (
+            <a target="_blank" href={product.permalink} key={i}>
               <div className="product-card">
                 <img src={product.thumbnail} className="product-img" />
                 <div className="product-info">
@@ -93,7 +93,13 @@ function Products() {
           ))}
         </div>
         <div className="refresh">
-          <button className="btn" onClick={() => refreshItems()}>
+          <button
+            className="btn"
+            onClick={() => {
+              // setLoadProducts([]);
+              refreshItems();
+            }}
+          >
             {phrases[Math.floor(Math.random() * phrases.length)]}
           </button>
         </div>

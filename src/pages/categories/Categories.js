@@ -56,10 +56,11 @@ function Categories() {
       <div className="categories">
         <h2>Seleccione una categoria</h2>
         <div className="categories-card-container">
-          {categories.map((categorie) => (
+          {categories.map((categorie, i) => (
             <Link
               to={`/${categorie.id}/products`}
               onClick={() => recordGACategorie(categorie.name)}
+              key={i}
             >
               <div className="categorie-card">
                 <p>{categorie.name}</p>
